@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prototipo Tiraderos Clandestinos</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Gestión Comunitaria de Residuos</h1>
+    <nav>
+      <button onclick="mostrar('inicio')">Inicio</button>
+      <button onclick="mostrar('reportes')">Reportes</button>
+      <button onclick="mostrar('mapa')">Mapa</button>
+      <button onclick="mostrar('guias')">Guías</button>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <!-- Inicio -->
+    <section id="inicio">
+      <h2>Bienvenido</h2>
+      <p>Este prototipo busca concientizar sobre los impactos de los tiraderos clandestinos en áreas rurales.</p>
+    </section>
+
+    <!-- Reportes -->
+    <section id="reportes" style="display:none;">
+      <h2>Reportar tiradero clandestino</h2>
+      <form id="formReporte">
+        <label>Descripción:</label><br>
+        <textarea id="descripcion" required></textarea><br><br>
+        
+        <label>Foto:</label><br>
+        <input type="file" id="foto" accept="image/*" required><br><br>
+        
+        <button type="submit">Enviar reporte</button>
+      </form>
+      <div id="listaReportes"></div>
+    </section>
+
+    <!-- Mapa -->
+    <section id="mapa" style="display:none;">
+      <h2>Mapa comunitario</h2>
+      <div id="map" style="height:400px;"></div>
+    </section>
+
+    <!-- Guías -->
+    <section id="guias" style="display:none;">
+      <h2>Guías prácticas</h2>
+      <ul>
+        <li>Separar residuos orgánicos e inorgánicos.</li>
+        <li>Evitar la quema de basura.</li>
+        <li>Reutilizar y reciclar materiales siempre que sea posible.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <!-- Google Maps API -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap"></script>
+</body>
+</html>
